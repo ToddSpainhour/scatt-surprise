@@ -3,6 +3,10 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 import fbConnection from '../helpers/data/connection';
 import Navbar from '../components/shared/MyNavbar/MyNavbar';
+import Home from '../components/pages/Home/Home';
+import SingleScat from '../components/pages/SingleScat/SingleScat';
+import NewScat from '../components/pages/NewScat/NewScat';
+import EditScat from '../components/pages/EditScat/EditScat';
 import './App.scss';
 
 import Auth from '../components/pages/Auth/Auth';
@@ -29,6 +33,10 @@ class App extends React.Component {
       <div className="App">
         <Navbar />
         <Auth />
+        <Home />
+        <NewScat />
+        <EditScat />
+        <SingleScat />
       </div>
     );
   }
