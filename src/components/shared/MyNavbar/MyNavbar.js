@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink as RRNavLink } from 'react-router-dom';
 import {
   Collapse,
   Navbar,
@@ -42,7 +43,13 @@ render() {
       return (
         <Nav className="ml-auto" navbar>
           <NavItem>
-            <NavLink href="/components/">Components</NavLink>
+            <NavLink tag={RRNavLink} to='/home'>Home</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink tag={RRNavLink} to='/new'>New Scat</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink onClick={this.logMeOut}>Logout</NavLink>
           </NavItem>
         </Nav>
       );
@@ -52,8 +59,6 @@ render() {
 
   return (
     <div className="MyNavbar">
-      {/* <h1>your navbar component</h1> */}
-      {/* <button className="btn btn-danger" onClick={this.logMeOut}>Logout</button> */}
       <Navbar color="light" light expand="md">
           <NavbarBrand href="/">Scat Surprise</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
