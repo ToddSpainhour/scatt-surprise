@@ -1,7 +1,7 @@
 import React from 'react';
 
 import authData from '../../../helpers/data/authData';
-import scatData from '../../../helpers/data/scatsData';
+import scatsData from '../../../helpers/data/scatsData';
 import ScatCard from '../../shared/ScatCard/ScatCard';
 
 import './Home.scss';
@@ -12,10 +12,8 @@ class Home extends React.Component {
   }
 
 getScats = () => {
-  // console.error('this is inside your getScats function in Home.js');
   const uid = authData.getUid();
-  // console.error('uid', uid);
-  scatData.getScatsByUid(uid)
+  scatsData.getScatsByUid(uid)
     .then((scats) => this.setState({ scats }))
     .catch((err) => console.error('unable to get scats', err));
 }
@@ -28,7 +26,7 @@ componentDidMount() {
 render() {
   const { scats } = this.state;
   const buildScatCards = scats.map((scat) => (
-    <ScatCard scat={scat}/>
+    <ScatCard key={scat.id} scat={scat}/>
   ));
   return (
     <div className="Home">
