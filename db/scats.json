@@ -89,7 +89,7 @@
       "uid": "12345"
     },
     "scat9": {
-      "color": "Red",
+      "color": "red",
       "shape": "log",
       "size": "medium",
       "temperature": 99,
