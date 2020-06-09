@@ -1,4 +1,8 @@
 import React from 'react';
+
+import authData from '../../../helpers/data/authData';
+import scatData from '../../../helpers/data/scatsData';
+
 import './NewScat.scss';
 
 class NewScat extends React.Component {
@@ -52,6 +56,35 @@ class NewScat extends React.Component {
   wasFulfillingChange = (e) => {
     this.setState({ scatWasFulfilling: e.target.checked });
   }
+
+  saveScat = (e) => {
+    e.preventDefault();
+    const {
+      scatColor,
+      scatShape,
+      scatSize,
+      scatTemperature,
+      scatViscosity,
+      scatWasFulfilling,
+      scatLocation,
+      scatNotes,
+    } = this.state;
+    const newScat = {
+      color: scatColor,
+      shape: scatShape,
+      size: scatSize,
+      temperature: scatTemperature,
+      viscosity: scatViscosity,
+      wasFulfilling: scatWasFulfilling,
+      location: scatLocation,
+      notes: scatNotes,
+      uid: authData.getUid(),
+    };
+    scatData.postScat(newScat)
+      .then(() => this.props.history.push('/home'))
+      .catch((err) => console.error('unable to save scat', err));
+  }
+
 
   render() {
     const {
@@ -163,7 +196,7 @@ class NewScat extends React.Component {
             <label class="form-check-label" for="exampleCheck1">Check me out</label>
           </div> */}
 
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" class="btn btn-primary" onClick={this.saveScat}>Submit</button>
       </form>
       </div>
     );
