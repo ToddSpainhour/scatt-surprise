@@ -103,87 +103,87 @@ class NewScat extends React.Component {
         <h3>New Scat</h3>
         <form>
 
-          <div class="form-group col-6 offset-3">
+          <div className="form-group col-6 offset-3">
             <label htmlFor="color">Color</label>
             <input
             type="text"
-            class="form-control"
+            className="form-control"
             id="scat-color"
             value={scatColor}
             onChange={this.colorChange}
             />
           </div>
 
-          <div class="form-group col-6 offset-3">
+          <div className="form-group col-6 offset-3">
             <label htmlFor="shape">Shape</label>
             <input
             type="text"
-            class="form-control"
+            className="form-control"
             id="scat-shape"
             value={scatShape}
             onChange={this.shapeChange}
             />
           </div>
 
-          <div class="form-group col-6 offset-3">
+          <div className="form-group col-6 offset-3">
             <label htmlFor="size">Size</label>
             <input
             type="text"
-            class="form-control"
+            className="form-control"
             id="scat-size"
             value={scatSize}
             onChange={this.sizeChange}
             />
           </div>
 
-          <div class="form-group col-6 offset-3">
+          <div className="form-group col-6 offset-3">
             <label htmlFor="temperature">Temperature</label>
             <input
             type="text"
-            class="form-control"
+            className="form-control"
             id="scat-temperature"
             value={scatTemperature}
             onChange={this.temperatureChange}
             />
           </div>
 
-          <div class="form-group col-6 offset-3">
+          <div className="form-group col-6 offset-3">
             <label htmlFor="viscosity">Viscosity</label>
             <input
             type="text"
-            class="form-control"
+            className="form-control"
             id="scat-viscosity"
             value={scatViscosity}
             onChange={this.viscosityChange}
             />
           </div>
 
-          <div class="form-group col-6 offset-3">
+          <div className="form-group col-6 offset-3">
             <label htmlFor="location">Location</label>
             <input
             type="text"
-            class="form-control"
+            className="form-control"
             id="scat-location"
             value={scatLocation}
             onChange={this.locationChange}
             />
           </div>
 
-          <div class="form-group col-6 offset-3">
+          <div className="form-group col-6 offset-3">
             <label htmlFor="notes">Notes</label>
             <input
             type="text"
-            class="form-control"
+            className="form-control"
             id="scat-notes"
             value={scatNotes}
             onChange={this.notesChange}
             />
           </div>
 
-          <div class="form-group form-check">
+          <div className="form-group form-check">
             <input
             type="checkbox"
-            class="form-check-input"
+            className="form-check-input"
             id="scat-wasFulfilling"
             checked={scatWasFulfilling}
             onChange={this.wasFulfillingChange}
@@ -191,12 +191,12 @@ class NewScat extends React.Component {
             <label htmlFor="scat-wasFulfilling">Was it Fulfilling?</label>
           </div>
 
-          {/* <div class="form-group form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+          {/* <div className="form-group form-check">
+            <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+            <label className="form-check-label" for="exampleCheck1">Check me out</label>
           </div> */}
 
-          <button type="submit" class="btn btn-primary" onClick={this.saveScat}>Submit</button>
+          <button type="submit" className="btn btn-primary" onClick={this.saveScat}>Submit</button>
       </form>
       </div>
     );
