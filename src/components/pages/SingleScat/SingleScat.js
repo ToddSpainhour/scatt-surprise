@@ -15,6 +15,13 @@ class SingleScat extends React.Component {
       .catch((err) => console.error('unable to get single scat', err));
   }
 
+  removeScat = () => {
+    const { scatId } = this.props.match.params;
+    scatsData.deleteScat(scatId)
+      .then(() => this.props.history.push('/home'))
+      .catch((err) => console.error('cannot delete scat', err));
+  }
+
   render() {
     const { scat } = this.state;
     return (
@@ -27,6 +34,7 @@ class SingleScat extends React.Component {
     <p>Location: {scat.location}</p>
     <p>Notes: {scat.notes}</p>
     <p>Was it fulfilling? {scat.wasFulfilling ? 'Yes' : 'No'}</p>
+    <button class="btn btn-danger" onClick={this.removeScat}><i class="far fa-times-circle"></i></button>
       </div>
     );
   }
